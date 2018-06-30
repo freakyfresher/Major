@@ -1,0 +1,33 @@
+{% extends "events.html" %}
+{% block title %}Upload{% endblock %}
+{% block soft %}
+    <div class="col-lg-8">
+    <form method="POST" action="{{ url_for('upload_page') }}" enctype="multipart/form-data">
+        <div class="form-group" >
+            <span class="col-lg-6"></span>
+            <input class="button btn-upload" type="file" id="software running" name="software" accept=".exe">
+            {% for field in form %}
+            <div style="padding: 30px">
+            {% if field.id != "csrf_token" and field.id != "submit" %}
+            <span class="col-lg-6">{{ field.label }}</span>
+            {% endif %}
+            {% if field.id!="submit" %}
+            <span class="col-lg-6">{{ field(class="form-control") }}</span>
+            {% else %}
+            <span class="col-lg-6"></span>
+            <span class="col-lg-6">{{ field(class="form-control button btn-primary") }}</span>
+            {% endif %}
+            </div>
+        {% endfor %}
+        </div>
+
+    </form>
+    {% for messages in get_flashed_messages() %}
+        <div class="alert alert-danger" role="alert">
+        {% if messages %}
+            {{ messages }}
+        {% endif %}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

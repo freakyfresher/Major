@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .jumbotron {
+      background-color: grey;
+      padding: 50px;
+    }
+        footer {
+      background-color: brown;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="jumbotron">
+  <div class="container text-center">
+
+          <li><a href="{{ url_for("main_page") }}"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+
+    <h1>Terms and Conditions</h1>
+  </div>
+</div>
+<div class="container">
+    <h1>Terms & Conditions</h1>
+    <p> 1.You can use our services for free to download the content.</p>
+    <p>2.User ID and Password you may have for this wesite are Confidential and you must maintain confidentiality of such info.</p>
+
+    <p> 3.By accessing or using the service you agree to be bound by these terms.
+           If you disagree with any part of the terms then you may not access the services</p>
+    <p>4.softstack doesnot reserves the right to modify, change, or discontinue any aspects of the services at any time </p>
+    <p>5.You can access to Softstack only for downloading the content from our webapplication</p>
+    <p>6.Only Authorized users only can access to modify, and right to deploy any docs/software content to Softstack</p>
+    <p>7.You are able to deploy only patented and Copyrighted content to the Softstack,
+        if not you are not allowed for further actions to perform</p>
+    <li><a href="{{ url_for('signup_page') }}"><button class="btn" align="right">Signup</button></a></li>
+    </div>
+<footer class="container" align="center">
+  <p>Services and Privacy policy</p>
+</footer>
+</body>
+
+</html>
+
+
+
+
+
+

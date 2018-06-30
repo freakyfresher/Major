@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NO STYLE</title>
+    <style>
+        div{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form action="{{ url_for('simple_page') }}" method="GET" >
+        <input type="text"  placeholder="Search" id="search_bar" name="search_bar">
+          <button type="submit">
+            search
+          </button>
+    </form>
+    </div>
+    {% for software in stack  %}
+    <div><a href="{{ "../static/{0}".format(software.name) }}">{{ software.name }}</a></div>
+    {% endfor %}
+</body>
+</html>

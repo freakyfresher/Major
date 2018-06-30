@@ -1,0 +1,21 @@
+
+{% extends "events.html" %}
+{% block title %} Home{% endblock %}
+{% block soft %}
+    <div class="col-lg-8">
+    {% for software in stack %}
+        <div class="well well-sm col-lg-12"align="center">
+            <div style="padding-bottom:20px ">
+                <div class="pull-left"><b>Name:</b> {{ software.name }}</div>
+                <div class="pull-right"><b>Uploader:</b> {{ software.userid }}</div>
+            </div>
+                <div style="text-align: left; padding: 10px"><b>Description:</b> {{ software.description }}</div>
+                <div class="pull-left">
+                    <span style="padding-left:10px "><b>UTC:</b> {{ software.upload_time }}</span>
+                </div>
+                <a href="{{ "../static/{0}".format(software.name) }}"><div class="pull-right"><button class="button btn-primary">Download</button></div></a>
+
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
